@@ -92,8 +92,33 @@ new_studio.save
 puts "Studios: #{Studio.all.count}"
 
 #Insert data in Movies
+warner = Studio.find_by({ "name" => "Warner Bros." })
 
+puts "Movies: #{Movie.all.count}" 
 
+new_movie = Movie.new
+new_movie ["title"] = "Batman Begins"
+new_movie ["year_released"] = "2005"
+new_movie ["rated"] = "PG-13"
+new_movie ["studio_id"] = warner ["name"]
+new_movie.save
+
+new_movie = Movie.new
+new_movie ["title"] = "The Dark Knight"
+new_movie ["year_released"] = "2008"
+new_movie ["rated"] = "PG-13"
+new_movie ["studio_id"] = warner ["name"]
+new_movie.save
+
+new_movie = Movie.new
+new_movie ["title"] = "The Dark Knight Rises"
+new_movie ["year_released"] = "2012"
+new_movie ["rated"] = "PG-13"
+new_movie ["studio_id"] = warner ["name"]
+new_movie.save
+
+puts "There are #{Studio.all.count} studios"
+puts "There are #{Movie.all.count} movies"
 
 #Insert data in Actors
 #Insert data in Roles
