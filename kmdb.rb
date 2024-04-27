@@ -298,9 +298,7 @@ puts ""
 
 warner = Studio.find_by({ "name" => "Warner Bros." })
 warner_movies = Movie.where({ "studio_id" => warner ["id"] })
-puts "Movies by Warner Bros: #{warner_movies.count}"
-
-
+# puts "Movies by Warner Bros: #{warner_movies.count}"
 for movie in warner_movies
     movie_title = movie ["title"]
     yearrelease = movie ["year_released"]
@@ -308,7 +306,6 @@ for movie in warner_movies
     studioname = studio ["name"]
 puts "#{movie_title} #{yearrelease} #{ratedpg} #{studioname}"
 end
-
 
 # Prints a header for the cast output
 puts ""
@@ -318,3 +315,23 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
+
+batmanmovies = Movie.where({ "title" => ["Batman Begins","The Dark Knight","The Dark Knight Rises"] })
+batman_roles = Role.where(movie_id: batmanmovies)
+
+puts "Batman roles: #{batman_roles.count}"
+
+for role in batman_roles
+    movie_title2 = movie ["title"]
+    movieactor = role.actor.name
+    movierole = role ["character_name"]
+puts "#{movie_title2} #{movieactor} #{movierole}"
+end
+
+
+# Batman Begins          Christian Bale        Bruce Wayne
+# Batman Begins          Michael Caine         Alfred
+# Batman Begins          Liam Neeson           Ra's Al Ghul
+# Batman Begins          Katie Holmes          Rachel Dawes
+# Batman Begins          Gary Oldman           Commissioner Gordon
+# The Dark Knight        Christian Bale        
