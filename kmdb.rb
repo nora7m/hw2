@@ -68,11 +68,11 @@
 # The Dark Knight Rises  Anne Hathaway         Selina Kyle
 
 # Delete existing data, so you'll start fresh each time this script is run.
-## Model.destroy_all
-## Studios.destroy_all
-## Movies.destroy_all
-## Actors.destroy_all
-## Roles.destroy_all
+# Model.destroy_all
+Studio.destroy_all
+Movie.destroy_all
+Actor.destroy_all
+Role.destroy_all
 # TODO!
 
 # Generate models and tables, according to the domain model.
@@ -92,6 +92,9 @@ new_studio.save
 puts "Studios: #{Studio.all.count}"
 
 #Insert data in Movies
+
+
+
 #Insert data in Actors
 #Insert data in Roles
 
