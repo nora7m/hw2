@@ -89,7 +89,6 @@ studio = Studio.new
 studio["name"] = "Warner Bros."
 studio.save
 puts "Studios: #{Studio.all.count}"
-p Studio
 
 #Insert data in Movies
 warner = Studio.find_by({ "name" => "Warner Bros." })
@@ -281,7 +280,7 @@ role.save
 
 role = Role.new
 role ["movie_id"] = batman3 ["id"]
-role ["actor_id"] = anne ["nid"]
+role ["actor_id"] = anne ["id"]
 role ["character_name"] = "Selina Kyle"
 role.save
 
@@ -297,14 +296,16 @@ puts ""
 # TODO!
 
 warner = Studio.find_by({ "name" => "Warner Bros." })
+#puts warner.inspect
 warner_movies = Movie.where({ "studio_id" => warner ["id"] })
+#puts warner_movies.inspect
 # puts "Movies by Warner Bros: #{warner_movies.count}"
 for movie in warner_movies
     movie_title = movie ["title"]
     yearrelease = movie ["year_released"]
     ratedpg = movie ["rated"]
     studioname = studio ["name"]
-puts "#{movie_title} #{yearrelease} #{ratedpg} #{studioname}"
+puts "#{movie_title}  #{yearrelease}  #{ratedpg}  #{studioname}"
 end
 
 # Prints a header for the cast output
@@ -316,16 +317,18 @@ puts ""
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
 
-batmanmovies = Movie.where({ "title" => ["Batman Begins","The Dark Knight","The Dark Knight Rises"] })
-batman_roles = Role.where(movie_id: batmanmovies)
+
+
+
+batman_roles = Role.all
 puts "Batman roles: #{batman_roles.count}"
 
 
 for role in batman_roles
-    movie_title2 = Role.find_by({"movie_id" => movie["title"]})
-    movieactor = Role.find_by({"actor_id" => actor["name"]})
+    movie_title2 = Movie.find_by({"id" => role ["movie_id"]})
+    movieactor = Actor.find_by({"id" => role ["actor_id"]})
     movierole = role ["character_name"]
-puts "#{movie_title2} #{movieactor} #{movierole}"
+puts "#{movie_title2["title"]} #{movieactor["name"]} #{movierole}"
 end
 
 
