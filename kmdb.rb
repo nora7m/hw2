@@ -83,17 +83,17 @@ Role.destroy_all
 # TODO!
 
 #Insert data in Studios
-puts "Studios: #{Studio.all.count}" 
+#puts "Studios: #{Studio.all.count}" 
 
 studio = Studio.new
 studio["name"] = "Warner Bros."
 studio.save
-puts "Studios: #{Studio.all.count}"
+#puts "Studios: #{Studio.all.count}"
 
 #Insert data in Movies
 warner = Studio.find_by({ "name" => "Warner Bros." })
 
-puts "Movies: #{Movie.all.count}" 
+#puts "Movies: #{Movie.all.count}" 
 
 movie = Movie.new
 movie ["title"] = "Batman Begins"
@@ -116,12 +116,12 @@ movie ["rated"] = "PG-13"
 movie ["studio_id"] = warner ["id"]
 movie.save
 
-puts "There are #{Studio.all.count} studios"
-puts "There are #{Movie.all.count} movies"
+#puts "There are #{Studio.all.count} studios"
+#puts "There are #{Movie.all.count} movies"
 
 #Insert data in Actors
 
-puts "Actors: #{Actor.all.count}" 
+#puts "Actors: #{Actor.all.count}" 
 
 actor = Actor.new
 actor ["name"] = "Christian Bale" 
@@ -167,7 +167,7 @@ actor = Actor.new
 actor ["name"] = "Anne Hathaway"
 actor.save
 
-puts "There are #{Actor.all.count} actors"
+#puts "There are #{Actor.all.count} actors"
 
 #Insert data in Roles
 
@@ -187,7 +187,7 @@ tom = Actor.find_by({ "name" => "Tom Hardy" })
 joseph = Actor.find_by({ "name" => "Joseph Gordon-Levitt" })
 anne = Actor.find_by({ "name" => "Anne Hathaway" })
 
-puts "Roles: #{Role.all.count}" 
+#puts "Roles: #{Role.all.count}" 
 
 #Batman Begins
 role = Role.new
@@ -284,7 +284,7 @@ role ["actor_id"] = anne ["id"]
 role ["character_name"] = "Selina Kyle"
 role.save
 
-puts "There are #{Role.all.count} roles"
+#puts "There are #{Role.all.count} roles"
 
 # Prints a header for the movies output
 
@@ -318,11 +318,8 @@ puts ""
 # TODO!
 
 
-
-
 batman_roles = Role.all
-puts "Batman roles: #{batman_roles.count}"
-
+#puts "Batman roles: #{batman_roles.count}"
 
 for role in batman_roles
     movie_title2 = Movie.find_by({"id" => role ["movie_id"]})
@@ -330,12 +327,3 @@ for role in batman_roles
     movierole = role ["character_name"]
 puts "#{movie_title2["title"]} #{movieactor["name"]} #{movierole}"
 end
-
-
-
-# Batman Begins          Christian Bale        Bruce Wayne
-# Batman Begins          Michael Caine         Alfred
-# Batman Begins          Liam Neeson           Ra's Al Ghul
-# Batman Begins          Katie Holmes          Rachel Dawes
-# Batman Begins          Gary Oldman           Commissioner Gordon
-# The Dark Knight        Christian Bale        
