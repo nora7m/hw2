@@ -318,15 +318,16 @@ puts ""
 
 batmanmovies = Movie.where({ "title" => ["Batman Begins","The Dark Knight","The Dark Knight Rises"] })
 batman_roles = Role.where(movie_id: batmanmovies)
-
 puts "Batman roles: #{batman_roles.count}"
 
+
 for role in batman_roles
-    movie_title2 = movie ["title"]
-    movieactor = role.actor.name
+    movie_title2 = Role.find_by({"movie_id" => movie["title"]})
+    movieactor = Role.find_by({"actor_id" => actor["name"]})
     movierole = role ["character_name"]
 puts "#{movie_title2} #{movieactor} #{movierole}"
 end
+
 
 
 # Batman Begins          Christian Bale        Bruce Wayne
