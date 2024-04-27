@@ -169,7 +169,58 @@ new_actor ["name"] = "Anne Hathaway"
 new_actor.save
 
 puts "There are #{Actor.all.count} actors"
+
 #Insert data in Roles
+
+batman1 = Movie.find_by({ "title" => "Batman Begins" })
+batman2 = Movie.find_by({ "title" => "The Dark Knight" })
+batman3 = Movie.find_by({ "title" => "The Dark Knight Rises" })
+
+christian = Actor.find_by({ "name" => "Christian Bale" })
+michael = Actor.find_by({ "name" => "Michael Caine" })
+liam = Actor.find_by({ "name" => "Liam Neeson" })
+katie = Actor.find_by({ "name" => "Katie Holmes" })
+gary = Actor.find_by({ "name" => "Gary Oldman" })
+heath = Actor.find_by({ "name" => "Heath Ledger" })
+aaron = Actor.find_by({ "name" => "Aaron Eckhart" })
+maggie = Actor.find_by({ "name" => "Maggie Gyllenhaal" })
+tom = Actor.find_by({ "name" => "Tom Hardy" })
+joseph = Actor.find_by({ "name" => "Joseph Gordon-Levitt" })
+anne = Actor.find_by({ "name" => "Anne Hathaway" })
+
+puts "Roles: #{Role.all.count}" 
+
+new_role = Role.new
+new_role ["movie_id"] = batman1 ["title"]
+new_role ["actor_id"] = christian ["name"]
+new_role ["character_name"] = "Bruce Wayne"
+new_role.save
+
+new_role = Role.new
+new_role ["movie_id"] = batman1 ["title"]
+new_role ["actor_id"] = michael ["name"]
+new_role ["character_name"] = "Alfred"
+new_role.save
+
+new_role = Role.new
+new_role ["movie_id"] = batman1 ["title"]
+new_role ["actor_id"] = liam ["name"]
+new_role ["character_name"] = "Ra's Al Ghul"
+new_role.save
+
+new_role = Role.new
+new_role ["movie_id"] = batman1 ["title"]
+new_role ["actor_id"] = katie ["name"]
+new_role ["character_name"] = "Rachel Dawes"
+new_role.save
+
+new_role = Role.new
+new_role ["movie_id"] = batman1 ["title"]
+new_role ["actor_id"] = gary ["name"]
+new_role ["character_name"] = "Commissioner Gordon"
+new_role.save
+
+puts "There are #{Role.all.count} roles"
 
 # Prints a header for the movies output
 puts "Movies"
