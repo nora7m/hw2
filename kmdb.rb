@@ -68,7 +68,11 @@
 # The Dark Knight Rises  Anne Hathaway         Selina Kyle
 
 # Delete existing data, so you'll start fresh each time this script is run.
-# Use `Model.destroy_all` code.
+## Model.destroy_all
+## Studios.destroy_all
+## Movies.destroy_all
+## Actors.destroy_all
+## Roles.destroy_all
 # TODO!
 
 # Generate models and tables, according to the domain model.
@@ -77,6 +81,19 @@
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
 # TODO!
+
+#Insert data in Studios
+puts "Studios: #{Studio.all.count}" 
+
+new_studio = Studio.new
+new_studio["name"] = "Warner Bros."
+new_studio.save
+
+puts "Studios: #{Studio.all.count}"
+
+#Insert data in Movies
+#Insert data in Actors
+#Insert data in Roles
 
 # Prints a header for the movies output
 puts "Movies"
