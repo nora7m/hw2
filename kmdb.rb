@@ -190,6 +190,7 @@ anne = Actor.find_by({ "name" => "Anne Hathaway" })
 
 puts "Roles: #{Role.all.count}" 
 
+#Batman Begins
 new_role = Role.new
 new_role ["movie_id"] = batman1 ["title"]
 new_role ["actor_id"] = christian ["name"]
@@ -218,6 +219,70 @@ new_role = Role.new
 new_role ["movie_id"] = batman1 ["title"]
 new_role ["actor_id"] = gary ["name"]
 new_role ["character_name"] = "Commissioner Gordon"
+new_role.save
+
+#The Dark Knight
+
+new_role = Role.new
+new_role ["movie_id"] = batman2 ["title"]
+new_role ["actor_id"] = christian ["name"]
+new_role ["character_name"] = "Bruce Wayne"
+new_role.save
+
+new_role = Role.new
+new_role ["movie_id"] = batman2 ["title"]
+new_role ["actor_id"] = heath ["name"]
+new_role ["character_name"] = "Joker"
+new_role.save
+
+new_role = Role.new
+new_role ["movie_id"] = batman2 ["title"]
+new_role ["actor_id"] = aaron ["name"]
+new_role ["character_name"] = "Harvey Dent"
+new_role.save
+
+new_role = Role.new
+new_role ["movie_id"] = batman2 ["title"]
+new_role ["actor_id"] = michael ["name"]
+new_role ["character_name"] = "Alfred"
+new_role.save
+
+new_role = Role.new
+new_role ["movie_id"] = batman2 ["title"]
+new_role ["actor_id"] = maggie ["name"]
+new_role ["character_name"] = "Rachel Dawes"
+new_role.save
+
+#The Dark Knight Rises
+
+new_role = Role.new
+new_role ["movie_id"] = batman3 ["title"]
+new_role ["actor_id"] = christian ["name"]
+new_role ["character_name"] = "Bruce Wayne"
+new_role.save
+
+new_role = Role.new
+new_role ["movie_id"] = batman3 ["title"]
+new_role ["actor_id"] = gary ["name"]
+new_role ["character_name"] = "Commissioner Gordon"
+new_role.save
+
+new_role = Role.new
+new_role ["movie_id"] = batman3 ["title"]
+new_role ["actor_id"] = tom ["name"]
+new_role ["character_name"] = "Bane"
+new_role.save
+
+new_role = Role.new
+new_role ["movie_id"] = batman3 ["title"]
+new_role ["actor_id"] = joseph ["name"]
+new_role ["character_name"] = "John Blake"
+new_role.save
+
+new_role = Role.new
+new_role ["movie_id"] = batman3 ["title"]
+new_role ["actor_id"] = anne ["name"]
+new_role ["character_name"] = "Selina Kyle"
 new_role.save
 
 puts "There are #{Role.all.count} roles"
